@@ -1,0 +1,54 @@
+<ActionBar title="Reading Log">
+    <ActionItem ios.position="right">
+        <Label text="Logout" (tap)="logout()" paddingright="20" color="red">
+        </Label>
+    </ActionItem>
+</ActionBar>
+<!-- <FlexboxLayout>  -->
+<StackLayout orientation="vertical" backgroundColor="#fffff">
+    <DatePicker [year]="currentYear" [month]="currentMonth" [day]="currentDay"
+        minDate="1970-01-01" maxDate="2100-12-31"
+        [(ngModel)]="readingLog.date">
+    </DatePicker>
+    <TextField hint="book title" [(ngModel)]="readingLog.title">
+    </TextField>
+    <TextField hint="minutes" [(ngModel)]="readingLog.minutes">
+    </TextField>
+    <Button [text]="'Submit'" class="btn btn-primary" (tap)="submit()">
+    </Button>
+
+    <StackLayout *ngFor="let entry of readingLogList">
+        <Label text={{entry.date}}></Label>
+        <Label text={{entry.title}}></Label>
+        <Label text={{entry.minutes}}></Label>
+    </StackLayout>
+</StackLayout>
+<!-- </FlexboxLayout> -->
+
+
+<!--
+<GridLayout rows="auto, *">
+    <GridLayout row="0" columns="*, auto" class="add-bar">
+        <TextField #groceryTextField [(ngModel)]="grocery"
+            hint="Enter a grocery item" col="0"></TextField>
+        <Image src="~/images/add.png" (tap)="add()" col="1"></Image>
+    </GridLayout>
+
+    <RadListView row="1" [items]="groceryList" swipeActions="true"
+        (itemSwipeProgressStarted)="onSwipeCellStarted($event)">
+
+        <ng-template let-item="item" let-i="index">
+            <Label [text]="item.name" class="p-15"></Label>
+        </ng-template>
+
+        <GridLayout *tkListItemSwipeTemplate columns="*, auto">
+            <StackLayout id="delete-view" col="1" (tap)="delete($event)"
+                class="delete-view">
+                <Image src="~/images/delete.png"></Image>
+            </StackLayout>
+        </GridLayout>
+
+    </RadListView>
+
+</GridLayout>
+-->

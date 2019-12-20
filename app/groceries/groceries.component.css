@@ -1,0 +1,28 @@
+.add-bar {
+  background-color: #CB1D00;
+  padding: 5;
+}
+.add-bar Image {
+  height: 25;
+  vertical-align: center;
+  margin-left: 10;
+  margin-right: 10;
+}
+.add-bar TextField {
+  padding: 10;
+}
+GridLayout Label {
+  background-color: white;
+  border-bottom-width: 1;
+  border-bottom-color: gray;
+}
+FlexboxLayout {
+  justify-content: center;
+}
+.delete-view {
+  background-color: #CB1D00;
+  padding: 20;
+}
+.delete-view Image {
+  color: white;
+}
